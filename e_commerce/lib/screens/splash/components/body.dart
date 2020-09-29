@@ -1,5 +1,6 @@
 import 'package:e_commerce/components/default_button.dart';
 import 'package:e_commerce/constants.dart';
+import 'package:e_commerce/screens/sign_in/sign_in_screen.dart';
 import 'package:e_commerce/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -66,7 +67,9 @@ class _BodyState extends State<Body> {
                     Spacer(flex: 3),
                     DefaultButton(
                       text: "Continue",
-                      press: () {},
+                      press: () {
+                        Navigator.pushNamed(context, SignInScreen.routeName);
+                      },
                     ),
                     Spacer(),
                   ],
@@ -107,14 +110,21 @@ class SplashContent extends StatelessWidget {
       children: <Widget>[
         Spacer(),
         Text(
-          "TOKYO",
+          "STYLUS SHOP",
           style: TextStyle(
             fontSize: getProportionateScreenWidth(36),
             color: kPrimaryColor,
             fontWeight: FontWeight.bold,
           ),
+          textAlign: TextAlign.center,
         ),
-        Text(text),
+        SizedBox(
+          height: getProportionateScreenHeight(10),
+        ),
+        Text(
+          text,
+          textAlign: TextAlign.center,
+        ),
         Spacer(flex: 2),
         Image.asset(
           image,
